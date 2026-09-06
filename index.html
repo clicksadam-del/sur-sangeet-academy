@@ -14,49 +14,52 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #faf6ee;
-    color: #30201c;
-    line-height: 1.6;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fbf7ef;
+    color: #34221d;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background: #fffaf2;
-    border-bottom: 1px solid #eadbc4;
+    background: rgba(255, 250, 242, 0.98);
+    border-bottom: 1px solid #ead9bd;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
-    padding: 18px 30px;
+    padding: 14px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
+    color: #821b21;
     font-size: 25px;
     font-weight: bold;
-    color: #7c171d;
-    letter-spacing: 1px;
+    line-height: 1;
 }
 
 .logo span {
     display: block;
-    font-size: 11px;
-    letter-spacing: 4px;
     color: #a66a20;
-    margin-top: -4px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 5px;
 }
 
 nav {
@@ -65,132 +68,230 @@ nav {
 }
 
 nav a {
+    color: #34221d;
     text-decoration: none;
-    color: #30201c;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #8b1e24;
+    color: #821b21;
 }
 
 .join-btn {
     background: #821b21;
     color: white;
-    padding: 11px 22px;
-    border-radius: 30px;
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
-/* HERO */
+.join-btn:hover {
+    background: #a5282e;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: 560px;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(circle at 85% 35%, #ead2a9 0 9%, transparent 10%),
-        radial-gradient(circle at 90% 75%, #e7c997 0 5%, transparent 6%),
-        linear-gradient(120deg, #f7eee0, #efe0c8);
+    min-height: 570px;
     position: relative;
     overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(174, 126, 55, 0.12) 0,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(174, 126, 55, 0.13) 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            115deg,
+            #f8efe0,
+            #f0dfc5
+        );
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    left: 5%;
+    top: 12%;
+    font-size: 120px;
+    color: rgba(150, 95, 28, 0.08);
 }
 
 .hero::after {
-    content: "✦";
+    content: "✧";
     position: absolute;
-    right: 10%;
-    top: 18%;
-    font-size: 180px;
-    color: rgba(150, 94, 29, .08);
+    right: 5%;
+    bottom: 8%;
+    font-size: 160px;
+    color: rgba(150, 95, 28, 0.08);
 }
 
 .hero-content {
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1250px;
+    min-height: 570px;
     margin: auto;
-    padding: 70px 30px;
+    padding: 35px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     position: relative;
     z-index: 2;
 }
 
+.hero-text {
+    width: 52%;
+    padding-bottom: 20px;
+}
+
 .small-title {
-    color: #a36a25;
+    color: #a66a20;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
     font-size: 15px;
     margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 76px);
-    color: #7d181d;
-    line-height: 1.05;
-    max-width: 750px;
+    color: #821b21;
+    font-size: clamp(46px, 6vw, 78px);
+    line-height: 1;
+    margin-bottom: 15px;
 }
 
 .hero h2 {
-    font-size: 30px;
-    margin-top: 12px;
-    color: #3a211e;
+    color: #3b241e;
+    font-size: 29px;
+    line-height: 1.25;
 }
 
 .hero p {
+    color: #5d4b43;
     font-family: Arial, sans-serif;
+    font-size: 16px;
     margin-top: 18px;
-    font-size: 17px;
-    color: #594943;
+    max-width: 560px;
 }
 
 .buttons {
-    margin-top: 32px;
+    margin-top: 30px;
     display: flex;
-    gap: 15px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
 .primary-btn,
 .secondary-btn {
-    padding: 14px 26px;
-    border-radius: 30px;
     text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 30px;
     font-family: Arial, sans-serif;
+    font-size: 14px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .primary-btn {
-    background: #861b21;
+    background: #821b21;
     color: white;
 }
 
-.secondary-btn {
-    border: 1px solid #861b21;
-    color: #861b21;
+.primary-btn:hover {
+    background: #a5282e;
+    transform: translateY(-2px);
 }
 
-/* FEATURES */
+.secondary-btn {
+    color: #821b21;
+    border: 1px solid #821b21;
+    background: rgba(255,255,255,0.3);
+}
+
+.secondary-btn:hover {
+    background: #821b21;
+    color: white;
+}
+
+/* DANCER */
+
+.hero-dancer {
+    width: 45%;
+    height: 560px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: relative;
+}
+
+.hero-dancer::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(213, 178, 121, 0.25);
+
+    right: 5%;
+    top: 8%;
+}
+
+.hero-dancer img {
+    position: relative;
+    z-index: 2;
+
+    max-width: 100%;
+    max-height: 560px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 20px 20px rgba(80, 40, 20, 0.16));
+}
+
+/* =========================
+   FEATURES
+========================= */
 
 .features {
-    background: #f2e4cf;
-    border-top: 1px solid #e4d1b4;
-    border-bottom: 1px solid #e4d1b4;
+    background: #f2e3cd;
+    border-top: 1px solid #e4cfad;
+    border-bottom: 1px solid #e4cfad;
 }
 
 .feature-grid {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
-    padding: 28px 30px;
+    padding: 25px 30px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
 .feature {
     text-align: center;
-    padding: 12px;
-    border-right: 1px solid #d9c3a0;
+    padding: 10px 20px;
+    border-right: 1px solid #d8c09b;
 }
 
 .feature:last-child {
@@ -198,44 +299,59 @@ nav a:hover {
 }
 
 .feature-icon {
-    font-size: 30px;
     color: #a66a20;
+    font-size: 30px;
+    margin-bottom: 3px;
 }
 
 .feature h3 {
     font-size: 16px;
-    margin-top: 5px;
 }
 
 .feature p {
+    color: #6a5a51;
     font-family: Arial, sans-serif;
     font-size: 12px;
-    color: #665850;
 }
 
-/* GENERAL */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
     padding: 80px 30px;
 }
 
 .section-title {
     text-align: center;
-    color: #7d181d;
-    font-size: 42px;
-    margin-bottom: 10px;
+    color: #821b21;
+    font-size: 44px;
+    line-height: 1.2;
 }
 
 .section-subtitle {
     text-align: center;
+    color: #66564d;
     font-family: Arial, sans-serif;
-    color: #665850;
+    font-size: 15px;
+    margin-top: 8px;
     margin-bottom: 45px;
 }
 
-/* COURSES */
+.section-title::after {
+    content: "— ✦ —";
+    display: block;
+    color: #b07a2a;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =========================
+   COURSES
+========================= */
 
 .courses {
     display: grid;
@@ -245,87 +361,116 @@ nav a:hover {
 
 .course {
     background: #fffdf9;
-    border: 1px solid #eadbc4;
+    border: 1px solid #ead8bc;
     border-radius: 14px;
-    padding: 28px 22px;
+
+    padding: 30px 22px;
+
     text-align: center;
-    transition: .3s;
+
+    transition: 0.3s;
+
+    box-shadow: 0 5px 18px rgba(80, 45, 20, 0.04);
 }
 
 .course:hover {
     transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(80, 45, 20, .10);
+    box-shadow: 0 18px 35px rgba(80, 45, 20, 0.12);
 }
 
 .course-icon {
-    width: 80px;
-    height: 80px;
+    width: 82px;
+    height: 82px;
+
     margin: auto;
-    border-radius: 50%;
-    background: #f1dfc2;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1dfc2;
+
+    color: #821b21;
+
     font-size: 35px;
-    color: #861b21;
 }
 
 .course h3 {
-    margin-top: 18px;
+    color: #821b21;
     font-size: 23px;
-    color: #7d181d;
+    margin-top: 17px;
 }
 
 .course p {
+    color: #66564d;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    color: #665850;
     margin-top: 8px;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about {
-    background: #f1e4d1;
+    background: #f1e2cc;
 }
 
 .about-grid {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
+
     padding: 80px 30px;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 70px;
+
     align-items: center;
 }
 
 .about h2 {
-    color: #7d181d;
-    font-size: 43px;
-    line-height: 1.1;
+    color: #821b21;
+    font-size: 45px;
+    line-height: 1.08;
 }
 
 .about p {
+    color: #57483f;
     font-family: Arial, sans-serif;
+    font-size: 15px;
     margin-top: 20px;
-    color: #544740;
 }
 
 .about-box {
-    border: 1px solid #cda86f;
-    padding: 45px;
-    text-align: center;
-    border-radius: 12px;
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d1a96d;
+    border-radius: 14px;
+
     background: #fffaf2;
+
+    padding: 40px;
 }
 
 .quote {
-    font-size: 31px;
+    color: #821b21;
+    font-size: 36px;
     font-style: italic;
-    color: #7d181d;
+    text-align: center;
+    line-height: 1.5;
 }
 
-/* TESTIMONIALS */
+/* =========================
+   FACULTY / TESTIMONIALS
+========================= */
 
 .testimonials {
     display: grid;
@@ -334,99 +479,220 @@ nav a:hover {
 }
 
 .testimonial {
-    background: white;
+    background: #fffdf9;
+    border: 1px solid #ead8bc;
+    border-radius: 13px;
+
     padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #eadbc4;
+
+    box-shadow: 0 5px 20px rgba(80, 45, 20, 0.04);
 }
 
 .testimonial p {
+    color: #5c4d45;
+    font-family: Arial, sans-serif;
     font-style: italic;
-    color: #594943;
+    font-size: 14px;
 }
 
 .testimonial strong {
     display: block;
+    color: #821b21;
     margin-top: 18px;
-    color: #7d181d;
 }
 
-/* CTA */
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-box {
+    min-height: 230px;
+
+    border: 1px solid #dfc8a4;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0,
+            transparent 35px,
+            rgba(166,106,32,0.07) 36px,
+            rgba(166,106,32,0.07) 37px
+        ),
+        #f7eddd;
+
+    text-align: center;
+}
+
+.gallery-box span {
+    color: #821b21;
+    font-size: 24px;
+    font-style: italic;
+}
+
+/* =========================
+   CTA
+========================= */
 
 .cta {
     background: #78151b;
     color: white;
     text-align: center;
+
     padding: 75px 30px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "✧";
+    position: absolute;
+    left: 8%;
+    top: 20%;
+    font-size: 100px;
+    color: rgba(255,255,255,0.07);
+}
+
+.cta::after {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    bottom: 15%;
+    font-size: 100px;
+    color: rgba(255,255,255,0.07);
 }
 
 .cta h2 {
+    position: relative;
+    z-index: 2;
     font-size: 42px;
 }
 
 .cta p {
+    position: relative;
+    z-index: 2;
+
     font-family: Arial, sans-serif;
     margin: 12px 0 28px;
 }
 
 .cta a {
+    position: relative;
+    z-index: 2;
+
     display: inline-block;
+
     background: white;
     color: #78151b;
+
     padding: 14px 30px;
+
     border-radius: 30px;
+
     text-decoration: none;
+
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background: #24100e;
-    color: #e8d5b8;
+    background: #25110f;
+    color: #ddc9aa;
     padding: 55px 30px 25px;
 }
 
 .footer-grid {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
+
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 50px;
 }
 
 footer h3 {
-    color: #e7c27d;
+    color: #e4bc72;
     margin-bottom: 15px;
 }
 
 footer p,
 footer a {
-    font-family: Arial, sans-serif;
-    color: #cdbba2;
-    font-size: 14px;
-    text-decoration: none;
     display: block;
+
+    color: #cbb8a0;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    text-decoration: none;
+
     margin-bottom: 8px;
 }
 
+footer a:hover {
+    color: white;
+}
+
 .copyright {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 40px auto 0;
+
     padding-top: 20px;
+
     border-top: 1px solid #4b302b;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
     font-size: 12px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     nav {
         display: none;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-dancer {
+        width: 100%;
+        height: 430px;
+        margin-top: 10px;
+    }
+
+    .hero-dancer img {
+        max-height: 430px;
     }
 
     .feature-grid {
@@ -435,7 +701,7 @@ footer a {
 
     .feature {
         border-right: none;
-        border-bottom: 1px solid #d9c3a0;
+        border-bottom: 1px solid #d8c09b;
     }
 
     .courses {
@@ -458,7 +724,7 @@ footer a {
 @media (max-width: 550px) {
 
     .navbar {
-        padding: 15px 18px;
+        padding: 14px 18px;
     }
 
     .logo {
@@ -466,20 +732,47 @@ footer a {
     }
 
     .join-btn {
-        padding: 9px 15px;
+        padding: 9px 16px;
         font-size: 12px;
     }
 
+    .hero {
+        min-height: auto;
+    }
+
     .hero-content {
-        padding: 60px 20px;
+        min-height: auto;
+        padding: 55px 20px 20px;
+    }
+
+    .small-title {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
     }
 
     .hero h2 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .hero p {
         font-size: 14px;
+    }
+
+    .hero-dancer {
+        height: 390px;
+    }
+
+    .hero-dancer img {
+        max-height: 390px;
+    }
+
+    .hero-dancer::before {
+        width: 280px;
+        height: 280px;
     }
 
     .section {
@@ -491,8 +784,11 @@ footer a {
     }
 
     .feature-grid {
-        grid-template-columns: 1fr 1fr;
         padding: 20px 10px;
+    }
+
+    .feature {
+        padding: 12px 5px;
     }
 
     .courses {
@@ -504,24 +800,40 @@ footer a {
     }
 
     .about h2 {
-        font-size: 35px;
+        font-size: 36px;
     }
 
     .about-box {
-        padding: 30px 20px;
+        min-height: 240px;
+        padding: 25px;
     }
 
     .quote {
-        font-size: 25px;
+        font-size: 28px;
+    }
+
+    .cta h2 {
+        font-size: 34px;
+    }
+
+    footer {
+        padding: 45px 20px 20px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
 <div class="navbar">
 
 <div class="logo">
@@ -535,27 +847,44 @@ footer a {
 <a href="#courses">Courses</a>
 <a href="#faculty">Faculty</a>
 <a href="#gallery">Gallery</a>
+<a href="#testimonials">Testimonials</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<a class="join-btn" href="#contact">Join Now</a>
+<a class="join-btn" href="#contact">
+Join Now
+</a>
 
 </div>
+
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
-<div class="small-title">Welcome to</div>
+<div class="hero-text">
 
-<h1>Sur Sangeet Academy</h1>
+<div class="small-title">
+Welcome to
+</div>
 
-<h2>Online Dance & Music Classes</h2>
+<h1>
+Sur Sangeet Academy
+</h1>
+
+<h2>
+Online Dance & Music Classes
+</h2>
 
 <p>
 Learn Indian classical and creative arts from the comfort of your home.
+Experience the joy of dance, music, rhythm and artistic expression.
 </p>
 
 <div class="buttons">
@@ -572,35 +901,94 @@ Discover Our Academy
 
 </div>
 
+
+<div class="hero-dancer">
+
+<img
+src="kathak-dancer.png"
+alt="Kathak dancer of Sur Sangeet Academy"
+>
+
+</div>
+
+</div>
+
 </section>
 
+
+<!-- =========================
+     FEATURES
+========================= -->
 
 <section class="features">
 
 <div class="feature-grid">
 
 <div class="feature">
-<div class="feature-icon">⌂</div>
-<h3>Learn from Home</h3>
-<p>Live Interactive Classes</p>
+
+<div class="feature-icon">
+⌂
 </div>
 
-<div class="feature">
-<div class="feature-icon">♬</div>
-<h3>All Age Groups</h3>
-<p>Kids to Adults</p>
+<h3>
+Learn from Home
+</h3>
+
+<p>
+Live Interactive Classes
+</p>
+
 </div>
 
-<div class="feature">
-<div class="feature-icon">★</div>
-<h3>Personal Attention</h3>
-<p>Focused Learning</p>
-</div>
 
 <div class="feature">
-<div class="feature-icon">◎</div>
-<h3>Learn Anywhere</h3>
-<p>Online Classes</p>
+
+<div class="feature-icon">
+♬
+</div>
+
+<h3>
+All Age Groups
+</h3>
+
+<p>
+Kids to Adults
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+★
+</div>
+
+<h3>
+Personal Attention
+</h3>
+
+<p>
+Focused Learning
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+◎
+</div>
+
+<h3>
+Learn Anywhere
+</h3>
+
+<p>
+Online Classes
+</p>
+
 </div>
 
 </div>
@@ -608,44 +996,100 @@ Discover Our Academy
 </section>
 
 
+<!-- =========================
+     COURSES
+========================= -->
+
 <section class="section" id="courses">
 
-<h2 class="section-title">Our Courses</h2>
+<h2 class="section-title">
+Our Courses
+</h2>
 
 <p class="section-subtitle">
 Discover the beauty of Indian dance and music
 </p>
 
+
 <div class="courses">
 
-<div class="course">
-<div class="course-icon">✦</div>
-<h3>Kathak</h3>
-<p>Grace, rhythm and storytelling through classical dance.</p>
-</div>
 
 <div class="course">
-<div class="course-icon">✧</div>
-<h3>Bollywood</h3>
-<p>Energetic and expressive Bollywood dance training.</p>
+
+<div class="course-icon">
+✦
 </div>
 
-<div class="course">
-<div class="course-icon">♪</div>
-<h3>Music</h3>
-<p>Explore the beauty of Indian vocal and instrumental music.</p>
+<h3>
+Kathak
+</h3>
+
+<p>
+Grace, rhythm and storytelling through Indian classical dance.
+</p>
+
 </div>
 
+
 <div class="course">
-<div class="course-icon">♫</div>
-<h3>Creative Dance</h3>
-<p>Fun and creative movement classes for young learners.</p>
+
+<div class="course-icon">
+✧
 </div>
+
+<h3>
+Bollywood
+</h3>
+
+<p>
+Energetic and expressive Bollywood dance training.
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">
+♪
+</div>
+
+<h3>
+Music
+</h3>
+
+<p>
+Explore the beauty of Indian vocal and instrumental music.
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">
+♫
+</div>
+
+<h3>
+Creative Dance
+</h3>
+
+<p>
+Fun and creative movement classes for young learners.
+</p>
+
+</div>
+
 
 </div>
 
 </section>
 
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about" id="about">
 
@@ -653,7 +1097,10 @@ Discover the beauty of Indian dance and music
 
 <div>
 
-<h2>About<br>Sur Sangeet Academy</h2>
+<h2>
+About<br>
+Sur Sangeet Academy
+</h2>
 
 <p>
 Sur Sangeet Academy is an online learning platform based in
@@ -663,17 +1110,20 @@ dance and music to learners everywhere.
 
 <p>
 Our aim is to make traditional arts accessible while creating
-a joyful and disciplined learning environment.
+a joyful, disciplined and inspiring learning environment.
 </p>
 
 </div>
 
+
 <div class="about-box">
 
 <div class="quote">
+
 “Learn.<br>
 Practice.<br>
 Grow.”
+
 </div>
 
 </div>
@@ -683,120 +1133,171 @@ Grow.”
 </section>
 
 
+<!-- =========================
+     FACULTY
+========================= -->
+
 <section class="section" id="faculty">
 
-<h2 class="section-title">Our Faculty</h2>
+<h2 class="section-title">
+Our Faculty
+</h2>
 
 <p class="section-subtitle">
 Guidance, experience and personal attention
 </p>
 
+
 <div class="testimonials">
 
-<div class="testimonial">
-<p>
-“Passionate teaching with a focus on technique,
-expression and understanding.”
-</p>
-<strong>Dance Faculty</strong>
-</div>
 
 <div class="testimonial">
+
 <p>
-“Every student receives individual guidance
-throughout their learning journey.”
+Passionate teaching with a focus on technique,
+expression and understanding.
 </p>
-<strong>Music Faculty</strong>
+
+<strong>
+Dance Faculty
+</strong>
+
 </div>
 
+
 <div class="testimonial">
+
 <p>
-“Traditional knowledge presented in a simple
-and enjoyable way.”
+Every student receives individual guidance
+throughout their learning journey.
 </p>
-<strong>Academy</strong>
+
+<strong>
+Music Faculty
+</strong>
+
 </div>
+
+
+<div class="testimonial">
+
+<p>
+Traditional knowledge presented in a simple
+and enjoyable way.
+</p>
+
+<strong>
+Sur Sangeet Academy
+</strong>
+
+</div>
+
 
 </div>
 
 </section>
 
 
+<!-- =========================
+     GALLERY
+========================= -->
+
 <section class="section" id="gallery">
 
-<h2 class="section-title">Our Learning Journey</h2>
+<h2 class="section-title">
+Gallery
+</h2>
 
 <p class="section-subtitle">
 Moments from classes, practice and performances
 </p>
 
-<div class="courses">
 
-<div class="course">
-<div class="course-icon">♛</div>
-<h3>Practice</h3>
-<p>Building strong foundations through regular practice.</p>
-</div>
+<div class="gallery-box">
 
-<div class="course">
-<div class="course-icon">✺</div>
-<h3>Performance</h3>
-<p>Developing confidence and stage presence.</p>
-</div>
-
-<div class="course">
-<div class="course-icon">❖</div>
-<h3>Tradition</h3>
-<p>Connecting students with India's rich artistic heritage.</p>
-</div>
+<span>
+Our artistic journey begins here ✦
+</span>
 
 </div>
 
 </section>
 
 
-<section class="section">
+<!-- =========================
+     TESTIMONIALS
+========================= -->
 
-<h2 class="section-title">What Our Students Say</h2>
+<section class="section" id="testimonials">
+
+<h2 class="section-title">
+What Our Students Say
+</h2>
 
 <p class="section-subtitle">
 A few words from our learning community
 </p>
 
+
 <div class="testimonials">
 
+
 <div class="testimonial">
+
 <p>
 “The classes are structured beautifully and easy
 to follow from home.”
 </p>
-<strong>— Student</strong>
+
+<strong>
+— Student
+</strong>
+
 </div>
 
+
 <div class="testimonial">
+
 <p>
 “A wonderful learning experience with personal
 attention and guidance.”
 </p>
-<strong>— Parent</strong>
+
+<strong>
+— Parent
+</strong>
+
 </div>
 
+
 <div class="testimonial">
+
 <p>
 “Learning dance has become a joyful part of my
 weekly routine.”
 </p>
-<strong>— Student</strong>
+
+<strong>
+— Student
+</strong>
+
 </div>
+
 
 </div>
 
 </section>
 
 
+<!-- =========================
+     CONTACT CTA
+========================= -->
+
 <section class="cta" id="contact">
 
-<h2>Begin Your Journey Today</h2>
+<h2>
+Begin Your Journey Today
+</h2>
 
 <p>
 Join Sur Sangeet Academy and discover the joy of Indian arts.
@@ -809,41 +1310,77 @@ Join via WhatsApp
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
 <div class="footer-grid">
 
+
 <div>
-<h3>सुर संगीत ACADEMY</h3>
+
+<h3>
+सुर संगीत ACADEMY
+</h3>
+
 <p>
 Online Dance & Music Classes from Rajajipuram,
 Lucknow, India.
 </p>
+
 </div>
 
+
 <div>
-<h3>Quick Links</h3>
+
+<h3>
+Quick Links
+</h3>
+
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#courses">Courses</a>
 <a href="#faculty">Faculty</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
+
 </div>
+
 
 <div>
-<h3>Contact</h3>
-<p>Rajajipuram, Lucknow, India</p>
-<p>Online Classes Available</p>
-<p>WhatsApp for Enquiries</p>
-</div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+Rajajipuram, Lucknow, India
+</p>
+
+<p>
+Online Classes Available
+</p>
+
+<p>
+WhatsApp for Enquiries
+</p>
 
 </div>
+
+
+</div>
+
 
 <div class="copyright">
+
 © 2026 Sur Sangeet Academy. All Rights Reserved.
+
 </div>
 
 </footer>
+
 
 </body>
 </html>
